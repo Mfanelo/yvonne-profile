@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Matrix Background -->
+    <canvas id="matrixBackground"></canvas>
+
     <!-- Main Content -->
     <div class="container">
         <header class="header">
-            <h1 class="title">Yvonne Motloung</h1>
-            <p class="subtitle">Electrical Engineering | Computer Systems </p>
+            <h1 class="title">Yvonne Motloung Profile</h1>
+            <p class="subtitle">Electrical Engineering: Computer Systems Graduate</p>
+
+            <p class="instruction">Press the buttons below to see the magic happen!</p>
 
             <div class="nav-buttons">
                 <button class="nav-button" data-section="about">
@@ -33,23 +38,37 @@
                 </button>
             </div>
 
-            <button id="transform-btn" class="transform-button">
-                <span>Transform</span>
-                <i class="fas fa-robot"></i>
-            </button>
+            <div class="action-buttons">
+                <button id="transform-btn" class="transform-button">
+                    <span>Download CV from CV ROBOT</span>
+                    <i class="fas fa-robot"></i>
+                </button>
+                
+                <button id="game-btn" class="game-button">
+                    <span>Play My Favourite GAME</span>
+                    <i class="fas fa-gamepad"></i>
+                </button>
+            </div>
         </header>
-
         <!-- Robot Container -->
         <div class="robot-container" id="robot">
+            <div class="download-prompt">Press my chest to download CV</div>
+            <div class="graduation-hat">
+                <div class="hat-top"></div>
+                <div class="hat-base"></div>
+                <div class="tassel"></div>
+            </div>
             <div class="robot-part head">
                 <div class="eye left"></div>
                 <div class="eye right"></div>
             </div>
-            <div class="robot-part body"></div>
+            <div class="robot-part body">
+                <button class="chest-light" id="downloadCV">
+                    <i class="fas fa-file-download"></i>
+                </button>
+            </div>
             <div class="robot-part arm left"></div>
             <div class="robot-part arm right"></div>
-            <div class="robot-part leg left"></div>
-            <div class="robot-part leg right"></div>
         </div>
 
         <!-- Content Overlay -->
@@ -59,77 +78,104 @@
                 <div id="content-body" class="content-body"></div>
             </div>
         </div>
-    </div>
 
-    <!-- Hidden Content Sections -->
-    <div class="hidden-content">
-        <div id="about" class="content-section">
-            <h2>About Me</h2>
-            <p>A passionate and motivated Electrical Engineering: Computer Systems graduate with expertise in IT support, 
-            cybersecurity, and network infrastructure. Experienced in AWS services and full-stack development.</p>
-        </div>
-
-        <div id="skills" class="content-section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>Networking</h3>
-                    <p>LAN/WAN, TCP/IP, Cisco Routing & Switching</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Cybersecurity</h3>
-                    <p>Security Fundamentals, Network Security</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <h3>Programming</h3>
-                    <p>Python, C++, C, HTML, CSS, JavaScript</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-aws"></i>
-                    <h3>AWS Services</h3>
-                    <p>IAM, Amplify, CloudWatch, S3</p>
+        <!-- Game Overlay -->
+        <div class="game-overlay" id="game-overlay">
+            <div class="game-modal">
+                <button class="close-btn">&times;</button>
+                <div class="game-container">
+                    <h2>Hangman Game</h2>
+                    <div class="hangman-container">
+                        <canvas id="hangmanCanvas"></canvas>
+                        <div class="word-display"></div>
+                        <div class="keyboard"></div>
+                        <div class="message"></div>
+                        <button class="new-game-btn">New Game</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="experience" class="content-section">
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <h3>IT Technician Intern</h3>
-                <p class="company">Resolution Circle - Johannesburg | 2024</p>
-                <ul>
-                    <li>Resolved hardware and software issues</li>
-                    <li>Configured operating systems and networks</li>
-                    <li>Managed IT documentation and assets</li>
+        <!-- Hidden Content Sections -->
+        <div class="hidden-content">
+            <div id="about" class="content-section">
+                <h2>About Me</h2>
+                <p>Your Friendly Neighborhood Tech Support Girl 🖥️</p>
+                <p>Fresh Engineering graduate with IT support internship experience. I fix computers, untangle network cables, and translate error messages into English. Currently equipped with entry-level everything but unlimited enthusiasm!</p>
+                <p>Tech Toolbox:</p>
+                <p>• IT support & troubleshooting basics<br>
+                • Fresh Cisco & Linux certifications<br>
+                • Some AWS cloud experience while I was experimenting<br>
+                • Basic coding knowledge from school<br>
+                • Problem-solving enthusiasm</p>
+                <p>Ready to jump into any tech role where I can learn, grow, and make your IT problems disappear. No task too small, no keyboard too intimidating! 💪</p>
+            </div>
+
+            <div id="skills" class="content-section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Networking</h3>
+                        <p>LAN/WAN, TCP/IP, Cisco Routing & Switching</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Cybersecurity</h3>
+                        <p>Security Fundamentals Certified, Network Security</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming</h3>
+                        <p>Python, C++, C, HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-aws"></i>
+                        <h3>AWS Services</h3>
+                        <p>IAM, Amplify, CloudWatch, S3, Route 53, CloudFront</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="experience" class="content-section">
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <h3>IT Technician Intern</h3>
+                    <p class="company">Resolution Circle - Johannesburg | 2024</p>
+                    <ul>
+                        <li>Resolved hardware and software issues</li>
+                        <li>Configured operating systems and networks</li>
+                        <li>Managed IT documentation and assets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="education" class="content-section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Advanced Diploma in Electrical Engineering: Computer Systems</h3>
+                    <p>Vaal University of Technology | 2025 - Present</p>
+                </div>
+                <div class="education-item">
+                    <h3>Diploma in Electrical Engineering: Computer Systems</h3>
+                    <p>Vaal University of Technology | Completed 2024</p>
+                </div>
+            </div>
+
+            <div id="certifications" class="content-section">
+                <h2>Certifications</h2>
+                <ul class="cert-list">
+                    <li>Cisco: Introduction to Cybersecurity</li>
+                    <li>CCNA: Introduction to Networks</li>
+                    <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+                    <li>NDG: Linux Essentials</li>
+                    <li>CCNA: Enterprise Networking, Security & Automation</li>
                 </ul>
             </div>
         </div>
 
-        <div id="education" class="content-section">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Advanced Diploma in Electrical Engineering: Computer Systems</h3>
-                <p>Vaal University of Technology | 2025 - Present</p>
-            </div>
-            <div class="education-item">
-                <h3>Diploma in Electrical Engineering: Computer Systems</h3>
-                <p>Vaal University of Technology | Completed 2024</p>
-            </div>
-        </div>
-
-        <div id="certifications" class="content-section">
-            <h2>Certifications</h2>
-            <ul class="cert-list">
-                <li>Cisco: Introduction to Cybersecurity</li>
-                <li>CCNA: Introduction to Networks</li>
-                <li>CCNA: Switching, Routing, and Wireless Essentials</li>
-                <li>NDG: Linux Essentials</li>
-                <li>CCNA: Enterprise Networking, Security & Automation</li>
-            </ul>
-        </div>
+        <!-- CV Download Link (hidden) -->
+        <a id="cvDownloadLink" href="./assets/Yvonne_Motloung_CV.pdf" target="_blank" style="display: none;"></a>
     </div>
 
     <script src="script.js"></script>
