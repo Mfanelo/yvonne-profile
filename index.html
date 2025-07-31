@@ -13,52 +13,50 @@
     <div class="container">
         <header class="header">
             <h1 class="title">Yvonne Motloung</h1>
-            <p class="subtitle">Electrical Engineering | Computer Systems </p>
+            <p class="subtitle">Electrical Engineering | Computer Systems | Robotics | Networking</p>
 
             <div class="nav-buttons">
                 <button class="nav-button" data-section="about">
-                    About Me
+                    Press for Magic: About Me
                 </button>
                 <button class="nav-button" data-section="skills">
-                    Skills
+                    Press for Magic: Skills
                 </button>
                 <button class="nav-button" data-section="experience">
-                    Experience
+                    Press for Magic: Experience
                 </button>
                 <button class="nav-button" data-section="education">
-                    Education
+                    Press for Magic: Education
                 </button>
                 <button class="nav-button" data-section="certifications">
-                    Certifications
+                    Press for Magic: Certifications
                 </button>
             </div>
 
             <button id="transform-btn" class="transform-button">
-                <span>Press To See Transformation </span>
+                <span>Transform into Robot</span>
                 <i class="fas fa-robot"></i>
             </button>
         </header>
 
         <!-- Robot Container -->
         <div class="robot-container" id="robot">
-            <div class="robot-head">
-                <div class="robot-eye left"></div>
-                <div class="robot-eye right"></div>
+            <div class="robot-part head">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
             </div>
-            <div class="robot-body">
-                <div class="robot-chest"></div>
-            </div>
-            <div class="robot-arm left"></div>
-            <div class="robot-arm right"></div>
-            <div class="robot-leg left"></div>
-            <div class="robot-leg right"></div>
+            <div class="robot-part body"></div>
+            <div class="robot-part arm left"></div>
+            <div class="robot-part arm right"></div>
+            <div class="robot-part leg left"></div>
+            <div class="robot-part leg right"></div>
         </div>
 
         <!-- Content Overlay -->
         <div class="content-overlay" id="content-overlay">
             <div class="content-modal">
                 <button class="close-btn">&times;</button>
-                <div class="content-body"></div>
+                <div id="content-body" class="content-body"></div>
             </div>
         </div>
     </div>
