@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yvonne Motloung - Tech Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Yvonne Motloung</h1>
+            <p class="subtitle">Electrical Engineering | Computer Systems | Robotics | Networking</p>
+
+            <div class="nav-buttons">
+                <button class="nav-button" data-section="about">
+                    Press for Magic: About Me
+                </button>
+                <button class="nav-button" data-section="skills">
+                    Press for Magic: Skills
+                </button>
+                <button class="nav-button" data-section="experience">
+                    Press for Magic: Experience
+                </button>
+                <button class="nav-button" data-section="education">
+                    Press for Magic: Education
+                </button>
+                <button class="nav-button" data-section="certifications">
+                    Press for Magic: Certifications
+                </button>
+            </div>
+
+            <button id="transform-btn" class="transform-button">
+                <span>Transform into Robot</span>
+                <i class="fas fa-robot"></i>
+            </button>
+        </header>
+
+        <!-- Robot Container -->
+        <div class="robot-container" id="robot">
+            <div class="robot-head">
+                <div class="robot-eye left"></div>
+                <div class="robot-eye right"></div>
+            </div>
+            <div class="robot-body">
+                <div class="robot-chest"></div>
+            </div>
+            <div class="robot-arm left"></div>
+            <div class="robot-arm right"></div>
+            <div class="robot-leg left"></div>
+            <div class="robot-leg right"></div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="content-overlay" id="content-overlay">
+            <div class="content-modal">
+                <button class="close-btn">&times;</button>
+                <div class="content-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Content Sections -->
+    <div class="hidden-content">
+        <div id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>A passionate and motivated Electrical Engineering: Computer Systems graduate with expertise in IT support, 
+            cybersecurity, and network infrastructure. Experienced in AWS services and full-stack development.</p>
+        </div>
+
+        <div id="skills" class="content-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking</h3>
+                    <p>LAN/WAN, TCP/IP, Cisco Routing & Switching</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Security Fundamentals, Network Security</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>Python, C++, C, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-aws"></i>
+                    <h3>AWS Services</h3>
+                    <p>IAM, Amplify, CloudWatch, S3</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="experience" class="content-section">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>IT Technician Intern</h3>
+                <p class="company">Resolution Circle - Johannesburg | 2024</p>
+                <ul>
+                    <li>Resolved hardware and software issues</li>
+                    <li>Configured operating systems and networks</li>
+                    <li>Managed IT documentation and assets</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="education" class="content-section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Advanced Diploma in Electrical Engineering: Computer Systems</h3>
+                <p>Vaal University of Technology | 2025 - Present</p>
+            </div>
+            <div class="education-item">
+                <h3>Diploma in Electrical Engineering: Computer Systems</h3>
+                <p>Vaal University of Technology | Completed 2024</p>
+            </div>
+        </div>
+
+        <div id="certifications" class="content-section">
+            <h2>Certifications</h2>
+            <ul class="cert-list">
+                <li>Cisco: Introduction to Cybersecurity</li>
+                <li>CCNA: Introduction to Networks</li>
+                <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+                <li>NDG: Linux Essentials</li>
+                <li>CCNA: Enterprise Networking, Security & Automation</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
